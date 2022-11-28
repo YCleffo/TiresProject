@@ -167,6 +167,74 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Images\icon.ico" />
+    <Resource Include="Assets\Images\logo.png" />
+    <Resource Include="Assets\Images\Products\tire_0.jpg" />
+    <Resource Include="Assets\Images\Products\tire_1.jpg" />
+    <Resource Include="Assets\Images\Products\tire_10.jpg" />
+    <Resource Include="Assets\Images\Products\tire_11.jpg" />
+    <Resource Include="Assets\Images\Products\tire_12.jpg" />
+    <Resource Include="Assets\Images\Products\tire_13.jpg" />
+    <Resource Include="Assets\Images\Products\tire_14.jpg" />
+    <Resource Include="Assets\Images\Products\tire_15.jpg" />
+    <Resource Include="Assets\Images\Products\tire_16.jpg" />
+    <Resource Include="Assets\Images\Products\tire_17.jpg" />
+    <Resource Include="Assets\Images\Products\tire_18.jpg" />
+    <Resource Include="Assets\Images\Products\tire_19.jpg" />
+    <Resource Include="Assets\Images\Products\tire_2.jpg" />
+    <Resource Include="Assets\Images\Products\tire_20.jpg" />
+    <Resource Include="Assets\Images\Products\tire_21.jpg" />
+    <Resource Include="Assets\Images\Products\tire_22.jpg" />
+    <Resource Include="Assets\Images\Products\tire_23.jpg" />
+    <Resource Include="Assets\Images\Products\tire_24.jpg" />
+    <Resource Include="Assets\Images\Products\tire_25.jpg" />
+    <Resource Include="Assets\Images\Products\tire_26.jpg" />
+    <Resource Include="Assets\Images\Products\tire_27.jpg" />
+    <Resource Include="Assets\Images\Products\tire_28.jpg" />
+    <Resource Include="Assets\Images\Products\tire_29.jpg" />
+    <Resource Include="Assets\Images\Products\tire_3.jpg" />
+    <Resource Include="Assets\Images\Products\tire_30.jpg" />
+    <Resource Include="Assets\Images\Products\tire_31.jpg" />
+    <Resource Include="Assets\Images\Products\tire_32.jpg" />
+    <Resource Include="Assets\Images\Products\tire_33.jpg" />
+    <Resource Include="Assets\Images\Products\tire_34.jpg" />
+    <Resource Include="Assets\Images\Products\tire_35.jpg" />
+    <Resource Include="Assets\Images\Products\tire_36.jpg" />
+    <Resource Include="Assets\Images\Products\tire_37.jpg" />
+    <Resource Include="Assets\Images\Products\tire_38.jpg" />
+    <Resource Include="Assets\Images\Products\tire_39.jpg" />
+    <Resource Include="Assets\Images\Products\tire_4.jpg" />
+    <Resource Include="Assets\Images\Products\tire_40.jpg" />
+    <Resource Include="Assets\Images\Products\tire_41.jpg" />
+    <Resource Include="Assets\Images\Products\tire_42.jpg" />
+    <Resource Include="Assets\Images\Products\tire_43.jpg" />
+    <Resource Include="Assets\Images\Products\tire_44.jpg" />
+    <Resource Include="Assets\Images\Products\tire_45.jpg" />
+    <Resource Include="Assets\Images\Products\tire_46.jpg" />
+    <Resource Include="Assets\Images\Products\tire_47.jpg" />
+    <Resource Include="Assets\Images\Products\tire_48.jpg" />
+    <Resource Include="Assets\Images\Products\tire_49.jpg" />
+    <Resource Include="Assets\Images\Products\tire_5.jpg" />
+    <Resource Include="Assets\Images\Products\tire_50.jpg" />
+    <Resource Include="Assets\Images\Products\tire_51.jpg" />
+    <Resource Include="Assets\Images\Products\tire_52.jpg" />
+    <Resource Include="Assets\Images\Products\tire_53.jpg" />
+    <Resource Include="Assets\Images\Products\tire_54.jpg" />
+    <Resource Include="Assets\Images\Products\tire_55.jpg" />
+    <Resource Include="Assets\Images\Products\tire_56.jpg" />
+    <Resource Include="Assets\Images\Products\tire_57.jpg" />
+    <Resource Include="Assets\Images\Products\tire_58.jpg" />
+    <Resource Include="Assets\Images\Products\tire_59.jpg" />
+    <Resource Include="Assets\Images\Products\tire_6.jpg" />
+    <Resource Include="Assets\Images\Products\tire_60.jpg" />
+    <Resource Include="Assets\Images\Products\tire_61.jpg" />
+    <Resource Include="Assets\Images\Products\tire_62.jpg" />
+    <Resource Include="Assets\Images\Products\tire_63.jpg" />
+    <Resource Include="Assets\Images\Products\tire_64.jpg" />
+    <Resource Include="Assets\Images\Products\tire_7.jpg" />
+    <Resource Include="Assets\Images\Products\tire_8.jpg" />
+    <Resource Include="Assets\Images\Products\tire_9.jpg" />
+    <Resource Include="Assets\Images\Products\picture.png" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
@@ -182,7 +250,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\Images\" />
     <Folder Include="View\Pages\" />
     <Folder Include="View\ViewModel\" />
   </ItemGroup>

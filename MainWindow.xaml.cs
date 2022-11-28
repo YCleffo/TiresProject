@@ -23,6 +23,7 @@ namespace vehicle
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
