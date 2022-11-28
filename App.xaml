@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:vehicle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush Color="#ffffff" x:Key="MainColor"/>
+        <SolidColorBrush Color="#d3d3d3" x:Key="SecondColor"/>
+        <SolidColorBrush Color="#a163f5" x:Key="LastColor"/>
+        <FontFamily x:Key="Courier New">pack://application:,,,/Resources/Fonts/cour.ttf#cour</FontFamily>
     </Application.Resources>
 </Application>
