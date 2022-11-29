@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Core.cs" />
+    <Compile Include="Models\LevenshteinDistance.cs" />
     <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -244,6 +245,7 @@
     <Resource Include="Assets\Images\products\tire_8.jpg" />
     <Resource Include="Assets\Images\products\tire_9.jpg" />
     <Resource Include="Assets\Images\Resources\picture.png" />
+    <Resource Include="Assets\Images\Resources\reverse.png" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
