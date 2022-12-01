@@ -70,6 +70,21 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="PrevTextBlock" VerticalAlignment="Center" Text="&lt;" Margin="0 0 2 0" FontSize="24"/>
+            <ListView x:Name="PaginationListView" BorderThickness="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontSize="24" Foreground="{Binding TextColor}" Text="{Binding Num}" TextDecorations="{Binding Selected}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+            <TextBlock x:Name="NextTextBlock" VerticalAlignment="Center" Text="&gt;" Margin="2 0 0 0" FontSize="24"/>
+        </StackPanel>
     </Grid>
 </Page>
