@@ -24,6 +24,7 @@ namespace vehicle.View.Pages
     {
         Core db = new Core();
         List<ProductType> productTypes;
+        bool reverseType;
         public MainPage()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace vehicle.View.Pages
             List<Product> displayProduct = GetRows();
             //ProductListView.ItemsSource = db.context.Product.ToList();
             ProductListView.ItemsSource = displayProduct;
+            CountRowsTextBlock.Text = $"Количество {GetRows().Count()}/ {db.context.Product.ToList().Count()}";
         }
 
         private List<Product> GetRows()
@@ -70,7 +72,23 @@ namespace vehicle.View.Pages
             {
                 arrayProduct = arrayProduct.Where(x => x.ProductTypeID == ComboBoxFiltr.SelectedIndex).ToList();
             }
-            
+            int value = ComboBoxSort.SelectedIndex;
+            if (value== 0)
+            {
+                arrayProduct = arrayProduct.OrderBy(p => p.Title).ToList();
+            }
+            else if(value == 1)
+            {
+                arrayProduct = arrayProduct.OrderBy(p => p.ProductionWorkshopNumber).ToList();
+            }
+            else if (value == 2)
+            {
+                arrayProduct = arrayProduct.OrderBy(p => p.CostProduct).ToList();
+            }
+            if (reverseType)
+            {
+                arrayProduct.Reverse();
+            }
             return arrayProduct;
         }
 
@@ -133,6 +151,18 @@ namespace vehicle.View.Pages
 
         private void ComboBoxFiltrSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            UpdateUI();
+        }
+
+        private void ComboBoxSortSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateUI();
+        }
+
+
+        private void ReverseButtonClick(object sender, RoutedEventArgs e)
+        {
+            reverseType = !reverseType;
             UpdateUI();
         }
     }

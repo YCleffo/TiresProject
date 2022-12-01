@@ -35,15 +35,13 @@ namespace vehicle.Models
                 }
                 if (arraymaterials.Count==0)
                 {
-                    return "Материалов нет";
+                    materials = "";
                 }
                 else
-                {
-
-
-                    materials += String.Join(", ", arraymaterials);
-                    return materials;
+                { 
+                    materials += String.Join(", ", arraymaterials);    
                 }
+                return materials;
             }
         }
         public double CostProduct
