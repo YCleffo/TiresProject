@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace vehicle.Models
 {
-    class PageItem
+    public class PageItem
     {
         public int Num { get; set; } //
         public string Selected { get; set; }

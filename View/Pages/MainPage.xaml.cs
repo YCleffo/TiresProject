@@ -23,6 +23,10 @@ namespace vehicle.View.Pages
     public partial class MainPage : Page
     {
         Core db = new Core();
+        
+        int countElement = 10;
+        int page = 1;
+      
         List<ProductType> productTypes;
         bool reverseType;
         public MainPage()
@@ -43,16 +47,37 @@ namespace vehicle.View.Pages
             };
             productTypes.AddRange(db.context.ProductType.ToList());
             ComboBoxFiltr.ItemsSource = productTypes;
+            DisplayPagination(1);
             UpdateUI();
         }
+
 
         private void UpdateUI()
         {
             List<Product> displayProduct = GetRows();
-            //ProductListView.ItemsSource = db.context.Product.ToList();
+           
+          
+           
+            if (GetRows().Count > 10)
+            {
+                DisplayPagination(page);
+               
+                displayProduct = GetRows().Skip((page - 1) * countElement).Take(countElement).ToList();
+                foreach(var item in displayProduct){
+                    Console.WriteLine(item.ID);
+                }
+                PaginationListView.Visibility = Visibility.Visible;
+            }
+            else
+            {
+              
+                PaginationListView.Visibility = Visibility.Collapsed; 
+            }
             ProductListView.ItemsSource = displayProduct;
-            CountRowsTextBlock.Text = $"Количество {GetRows().Count()}/ {db.context.Product.ToList().Count()}";
+            CountRowsTextBlock.Text = $"Количество {displayProduct.Count()}/ {db.context.Product.ToList().Count()}";
         }
+
+   
 
         private List<Product> GetRows()
         {
@@ -61,7 +86,7 @@ namespace vehicle.View.Pages
             if (!String.IsNullOrEmpty(FindTextBox.Text))
             {
                  arrayProduct = arrayProduct.Where(x => x.Title.ToUpper().Contains(searchData)).ToList();
-                // arrayProduct = arrayProduct.Where(x => LevenshteinDistance(x.Title.ToUpper(), searchData)<=6).ToList();
+                 arrayProduct = arrayProduct.Where(x => LevenshteinDistance(x.Title.ToUpper(), searchData)<=12).ToList();
             }
 
             if (ComboBoxFiltr.ItemsSource != null & ComboBoxFiltr.SelectedIndex == 0)
@@ -90,6 +115,30 @@ namespace vehicle.View.Pages
                 arrayProduct.Reverse();
             }
             return arrayProduct;
+        }
+
+        private int GetPagesCount()
+        {
+            int countPage = 0;
+            
+            int count = GetRows().Count();
+            if (count > countElement)
+            {
+                countPage = Convert.ToInt32(Math.Ceiling(count * 1.0 / countElement));
+            }
+            return countPage;
+        }
+
+        private void DisplayPagination(int page)
+        {
+            List<PageItem> source = new List<PageItem>();
+            for(int i=1; i<= GetPagesCount(); i++)
+            {
+                source.Add(new PageItem(i, i == page));
+            }
+            PaginationListView.ItemsSource = source;
+            PrevTextBlock.Visibility = (page <= 1 ? Visibility.Hidden : Visibility.Visible);
+            NextTextBlock.Visibility = (page >= GetPagesCount() ? Visibility.Hidden : Visibility.Visible);
         }
 
         public static int LevenshteinDistance(string source1, string source2)
@@ -164,6 +213,49 @@ namespace vehicle.View.Pages
         {
             reverseType = !reverseType;
             UpdateUI();
+        }
+
+
+        private void TextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock activePage = (TextBlock)sender;
+            page = Convert.ToInt32(activePage.Text);
+            UpdateUI();
+        }
+
+
+
+        private void PrevTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (page <= 1)
+            {
+                page = 1;
+                PrevTextBlock.Visibility = Visibility.Visible;
+                UpdateUI();
+            }
+            else
+            {
+                page -= 1;
+                PrevTextBlock.Visibility = Visibility.Visible;
+                UpdateUI();
+            }
+        }
+
+
+        private void NextTextBlockMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (page >= GetPagesCount())
+            {
+                page =GetPagesCount();
+                NextTextBlock.Visibility = Visibility.Hidden;
+                UpdateUI();
+            }
+            else
+            {
+                page += 1;
+                PrevTextBlock.Visibility = Visibility.Visible;
+                UpdateUI();
+            }
         }
     }
 }
