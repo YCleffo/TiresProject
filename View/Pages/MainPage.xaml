@@ -75,7 +75,7 @@
             <ListView x:Name="PaginationListView" BorderThickness="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock FontSize="24" Foreground="{Binding TextColor}" Text="{Binding Num}" TextDecorations="{Binding Selected}"/>
+                        <TextBlock FontSize="24" Foreground="{Binding TextColor}" Text="{Binding Num}" TextDecorations="{Binding Selected}" FontWeight="{Binding FontWeight}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemsPanel>
